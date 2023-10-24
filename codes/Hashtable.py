@@ -4,11 +4,32 @@ import matplotlib.pyplot as plt
 from random import choice
 %matplotlib inline
 class HashTable:
+  def __init__(self,h,n=10):
+    self.h = h
+    self.n = n
+    self.bucket = [[] for i in range(n)]
+
     ## code
     ## code
     ## def insert(self, x)
+  def insert(self, x):
+    self.bucket[self.h(x)].append(x)
+
     ## def delete(self, x)
-    ## def find(self, x)
+  def delete(self,x):
+    poss = self.bucket[self.h(x)]
+    for i in range(len(poss)):
+      if poss[i] == x:
+        return poss.pop[i]
+    return None
+
+    ## def findself, x)
+  def find(self,x):
+    poss = self.bucket[self.h(x)]
+    for i in range(len(poss)):
+      if poss[i] == x:
+        return poss[i]
+    return None
 def mi_Mod(x,n=10):
     ## CODE
 print(mi_Mod(52))
